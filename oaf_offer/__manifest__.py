@@ -27,9 +27,9 @@ Features include:
     'depends': ['product'],
 
     'data': [
-        # 'security/ir.model.access.csv',
         'data/offer_cron.xml',
-        'views/views.xml',
+        'data/offer_cron.xml',
+        'views/product_template_views.xml',
     ],
 }
 

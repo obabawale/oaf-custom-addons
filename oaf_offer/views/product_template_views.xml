@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+
+    <record id="product_template_form_view" model="ir.ui.view">
+      <field name="name">product.template.view.form.oaf.offer</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_form_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='detailed_type']" position="after">
+          <label for="date_from"/>
+          <div class="o_row">
+            <field name="date_from"/> - 
+            <field name='date_to' />
+          </div>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>
