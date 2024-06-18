@@ -2,7 +2,7 @@
   <data>
 
     <record model="ir.cron" id="cron_deactivate_expired_offer">
-      <field name="name">Deactivate Expired Offer</field>
+      <field name="name">Offers: Deactivate Expired Offer</field>
       <field name="model_id" ref="product.model_product_template" />
       <field name="interval_number">1</field>
       <field name="interval_type">days</field>

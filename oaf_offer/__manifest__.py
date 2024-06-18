@@ -28,7 +28,6 @@ Features include:
 
     'data': [
         'data/offer_cron.xml',
-        'data/offer_cron.xml',
         'views/product_template_views.xml',
     ],
 }
