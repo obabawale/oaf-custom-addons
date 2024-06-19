@@ -7,14 +7,44 @@
       <field name="inherit_id" ref="product.product_template_form_view"/>
       <field name="arch" type="xml">
         <xpath expr="//field[@name='detailed_type']" position="after">
+          <field name="is_offer" invisible="1" />
           <label for="date_from"/>
           <div class="o_row">
-            <field name="date_from"/> - 
-            <field name='date_to' />
+            <field name="date_from" required="is_offer"/>
+ - 
+            <field name='date_to' required="is_offer" />
           </div>
         </xpath>
       </field>
     </record>
+
+    <record id="product_template_search_view" model="ir.ui.view">
+      <field name="name">product.template.view.form.inherit</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_search_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="inside">
+          <field name="is_offer" />
+        </xpath>
+      </field>
+    </record>
+
+    <record id="oaf_offer_action" model="ir.actions.act_window">
+      <field name="name">Offers</field>
+      <field name="res_model">product.template</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[('is_offer', '=', True),('detailed_type', '=', 'combo')]</field>
+      <field name="context">{
+        'default_is_offer': True, 
+        'search_default_is_offer': True,
+        'default_detailed_type': 'combo'
+      }</field>
+      <field name="help" type="html">
+        <p class="oe_no_content_create">Create a new offer</p>
+      </field>
+    </record>
+
+    <menuitem id="oaf_offer_menu" name="Offers" action="oaf_offer_action" parent="point_of_sale.pos_config_menu_catalog" />
 
   </data>
 </odoo>
