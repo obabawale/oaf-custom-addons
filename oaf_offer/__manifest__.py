@@ -21,10 +21,10 @@ Features include:
     'author': "Olalekan Babawale",
     'website': "https://obabawale.github.io",
 
-    'category': 'Stock',
+    'category': 'Point of Sale',
     'version': '0.1',
 
-    'depends': ['product'],
+    'depends': ['point_of_sale'],
 
     'data': [
         'data/offer_cron.xml',
